@@ -1,0 +1,19 @@
+<div class="container mb-5 mt-2 text-center">
+        <a class="btn btn-dark ms-3" routerLink="../admin">Admin Item</a>
+    <div class="row justify-content-evenly " style="margin:0 auto;">
+      <div *ngFor="let card of cardData" class="card text-center " style="width: 16rem;margin: 8px 8px;">
+        <img src="{{card.image}}" class="card-img-top"
+          alt="...">
+        <div class="card-body text-capitalize">
+          <h5 class="card-title ">{{card.title}}</h5>
+          <p class="card-text"><strong>₹ {{card.price}}</strong></p>
+         
+          <a routerLink="/edit/{{card.id}}" class="btn text-capitalize btn-sm btn-success">edit</a>&nbsp;&nbsp;
+          <button (click)="deleteitem(card.id)" class="btn text-capitalize btn-sm btn-danger">remove</button>
+
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  

@@ -1,0 +1,16 @@
+<div class="container mb-5 mt-2">
+  <div class="row justify-content-evenly " style="margin:0 auto;">
+    <div *ngFor="let card of cardData" class="card text-center " style="width: 16rem;margin: 8px 8px;">
+      <img src="{{card.image}}" class="card-img-top"
+        alt="...">
+      <div class="card-body text-capitalize">
+        <h5 class="card-title ">{{card.title}}</h5>
+        <p class="card-text"><strong>₹ {{card.price}}</strong> </p>
+        <!-- <a  (click)="itemminus()" class="btn btn-sm btn-danger"><strong> - </strong></a><span> {{item}} </span><a
+         (click)="itemplus(card.id)" class="btn btn-sm btn-danger"><strong>+</strong></a>&nbsp;&nbsp; -->
+        <button (click)="addtocart(card)"  (click)=itemid(card.id) class="btn text-capitalize btn-sm btn-success">Add to cart</button>
+      </div>
+    </div>
+
+  </div>
+</div>

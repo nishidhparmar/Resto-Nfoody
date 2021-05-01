@@ -1,0 +1,46 @@
+<div class="container mt-4 mb-4">
+  <p class="text-center fs-1">Your Items</p><hr style="color: green;">
+  <div class="row ">
+    <div class="col-lg-7 d-flex justify-content-center" style="    flex-direction: column;    align-items: center;" >
+      <div *ngFor="let card of cardData" class="card mb-3"  style="width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-5 text-center">
+            <img src="{{card.image}}" width="200px" height="150px" alt="...">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body text-capitalize">
+              <div class="row">
+                <div class="col-10">
+                  <h3 class="card-title">{{card.title}}</h3>
+                </div>
+                <div class="col-2">
+                  <a (click)="remove(card.id)"
+                    style="margin-left: 10px;margin-top: -10px; height: 30px;border-radius: 50px;"
+                    class="btn btn-danger btn-sm">x</a>
+                </div>
+    
+              </div>
+              <hr>
+              <a (click)=minus(card.id,card.price) class="btn btn-sm btn-success"><strong> - </strong></a><span> {{obj[card.id]}} </span><a
+              (click)=plus(card.id,card.price) class="btn btn-sm btn-success"><strong>+</strong></a>
+              <span  class="card-text fs-2 " style="margin-left: 50px;"><strong>₹{{card.price*obj[card.id]}}</strong></span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 d-flex justify-content-center">
+      <div class="card text-center" style="width: 540px;height: 220px;">
+        <div class="card-body">
+          <h5 class="card-title">Total Amount To Pay</h5>
+          <p class="fs-1">₹{{price}}</p>
+          <a routerLink="../menu" (click)="payorder()" class="btn btn-dark">Order Now</a><br>
+          <!-- <p class="fs-6 mt-2 ">{{pay}}</p> -->
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

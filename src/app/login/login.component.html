@@ -1,0 +1,30 @@
+<div class="container" style="max-width: 500px;margin-top: 50px;">
+    <h1>Admin Login!</h1>
+    <div class="alert alert-success alert-dismissible fade show" *ngIf="alert" role="alert">
+        <strong>Hey! Nishidh Welcome</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <form #login="ngForm" (ngSubmit)="adminlogin(login)">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" ngModel #name="ngModel" required autocomplete="off" name="name">
+            <span *ngIf="name.invalid && name.touched,">Please Enter Your Name</span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" ngModel #password="ngModel" required autocomplete="off"
+                name="password">
+            <span *ngIf="password.invalid && password.touched,">Please Enter Title</span>
+        </div>
+
+        <p class="fs-5">{{error}}</p>
+        <button type="submit" [disabled]="name.invalid || password.invalid " class="btn btn-success">Submit</button>
+        <a class="btn btn-dark ms-3" [style.display]="admin?'':'none'" routerLink="../admin">Add Item</a>
+        <a class="btn btn-dark ms-3" [style.display]="admin?'':'none'" routerLink="../adminmenu">Admin Menu</a>
+    </form><br>
+    <div>
+
+    </div>
+
+
+</div>

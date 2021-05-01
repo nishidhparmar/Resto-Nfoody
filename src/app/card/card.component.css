@@ -1,0 +1,16 @@
+img{
+    height: 160px;
+    object-fit: cover;
+    margin-top: 10px;
+    image-resolution:300dpi;
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+
+}
+.card{
+transition: .2s ease;
+}
+.card:hover{
+    transform: scale(1.01) !important;
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+
+}

@@ -1,0 +1,26 @@
+<div class="container" style="max-width: 500px;margin-top: 50px;">
+    <h1>Edit Food!</h1>
+    <div class="alert alert-success alert-dismissible fade show" *ngIf="alert" role="alert">
+      <strong>Success!</strong> Your Data Successfully Added.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <form #editfood="ngForm" (ngSubmit)="edititem(editfood)" >
+        <div class="mb-3">
+          <label class="form-label">Image Url</label>
+          <input type="text" class="form-control" [ngModel]="cardData.image" #image="ngModel" required autocomplete="off" name="image" >
+          <span *ngIf="image.invalid && image.touched,">Please Enter Image Url</span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input type="text" class="form-control" [ngModel]="cardData.title" #title="ngModel" required autocomplete="off" name="title" >
+            <span *ngIf="title.invalid && title.touched,">Please Enter Title</span>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="number" class="form-control" [ngModel]="cardData.price" #price="ngModel" required autocomplete="off" name="price" >
+            <span *ngIf="price.invalid && price.touched,">Please Enter price</span>
+          </div>
+       
+        <button routerLink="adminmenu" type="submit"  [disabled]="image.invalid || title.invalid || price.invalid" class="btn btn-success">Update</button>
+      </form>
+</div>
